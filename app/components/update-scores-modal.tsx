@@ -96,7 +96,11 @@ export function UpdateScoresModal({
                     <Input
                       type="number"
                       {...field}
-                      onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        field.onChange(value === "" ? "" : Number(value));
+                      }}
+                      value={field.value ?? ""}
                     />
                   </FormControl>
                   <FormMessage />
@@ -117,7 +121,11 @@ export function UpdateScoresModal({
                     <Input
                       type="number"
                       {...field}
-                      onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        field.onChange(value === "" ? "" : Number(value));
+                      }}
+                      value={field.value ?? ""}
                     />
                   </FormControl>
                   <FormMessage />
@@ -138,7 +146,11 @@ export function UpdateScoresModal({
                     <Input
                       type="number"
                       {...field}
-                      onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        field.onChange(value === "" ? "" : Number(value));
+                      }}
+                      value={field.value ?? ""}
                     />
                   </FormControl>
                   <FormMessage />
