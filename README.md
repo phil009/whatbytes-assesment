@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WhatBytes - Skill Assessment Platform
+
+A modern skill assessment dashboard built with Next.js and shadcn/ui, featuring interactive charts, real-time score updates, and a responsive layout.
+
+![WhatBytes Dashboard](https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bandicam%202025-02-26%2013-27-53-269.jpg-ZMmO3YKyFc9LqC8ZouXvOVYc3Scr2i.jpeg)
+
+## Features
+
+- 📊 Interactive performance analytics
+- 📱 Responsive design with collapsible sidebar
+- 📈 Real-time score updates
+- 📋 Syllabus-wise analysis
+- 🎯 Detailed question analysis
+- 📊 Performance comparison graphs
+
+## Tech Stack
+
+- [Next.js 14](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [Recharts](https://recharts.org/) - Charting library
+- [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar) - Circular progress indicators
+- [Iconify](https://iconify.design/) - Icon system
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+ 
+- npm/yarn/pnpm
+
+### Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/yourusername/whatbytes.git
+cd whatbytes
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+npm run dev
+```
 
-## Learn More
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+whatbytes/
+├── app/
+│   ├── layout.tsx        # Root layout with header and sidebar
+│   ├── page.tsx          # Dashboard page
+│   ├── skill-test/      # Skill test feature
+│   │   ├── page.tsx
+│   │   ├── comparison-graph.tsx
+│   │   ├── score-chart.tsx
+│   │   └── update-scores-modal.tsx
+│   └── internship/      # Internship feature
+│       └── page.tsx
+├── components/
+│   ├── app-sidebar.tsx   # Main sidebar component
+│   └── ui/              # shadcn/ui components
+├── public/              # Static assets
+└── README.md
+```
 
-## Deploy on Vercel
+## Features in Detail
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Skill Test Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The skill test dashboard provides a comprehensive view of user performance:
+
+- **Quick Statistics**: Shows rank, percentile, and correct answers
+- **Comparison Graph**: Bell curve showing performance distribution
+- **Syllabus Analysis**: Topic-wise performance breakdown
+- **Question Analysis**: Score visualization with circular progress
+
+
+### Interactive Updates
+
+Users can update their scores through a modal interface:
+
+- Update rank
+- Update percentile
+- Update current score
+Changes are reflected in real-time across all visualizations.
+
+
+### Responsive Design
+
+- Full sidebar on desktop (≥1024px)
+- Collapsible sidebar on mobile/tablet (<1024px)
+- Logo acts as sidebar trigger on smaller screens
+- Optimized layout for all device sizes
